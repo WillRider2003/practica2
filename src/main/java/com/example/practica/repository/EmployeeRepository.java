@@ -9,3 +9,5 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     List<Employee> findByFirstNameContainingOrLastNameContaining(String firstName, String lastName);
 
 }
+
+//hola causa
