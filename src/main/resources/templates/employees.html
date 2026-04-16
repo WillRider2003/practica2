@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employees</title>
+</head>
+<body>
+
+<h1>Lista de empleados</h1>
+
+<form th:action="@{/employees}" method="get">
+    <input type="text" name="keyword" th:value="${keyword}" placeholder="Buscar...">
+    <button type="submit">Buscar</button>
+    <a href="/employees">Limpiar</a>
+</form>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Puesto</th>
+        <th>Departamento</th>
+        <th>Ciudad</th>
+        <th>Teléfono</th>
+        <th>Salario</th>
+    </tr>
+
+    <tr th:each="emp : ${employees}">
+        <td th:text="${emp.id}"></td>
+        <td th:text="${emp.firstName}"></td>
+        <td th:text="${emp.lastName}"></td>
+        <td th:text="${emp.jobTitle}"></td>
+        <td th:text="${emp.department}"></td>
+        <td th:text="${emp.city}"></td>
+        <td th:text="${emp.phone}"></td>
+        <td th:text="${emp.salary}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
